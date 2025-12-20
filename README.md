@@ -28,7 +28,7 @@ Created by Get Zen
 * Load farm data
 * List of pets with their current requests
 
-* https://sfl.world/tools/pet-feed-calc/
+https://sfl.world/tools/pet-feed-calc/
 
 # Community Wiki
 Community Docs Deprecated
