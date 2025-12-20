@@ -19,7 +19,7 @@
         <!-- HEADER & FETCH -->
         <div class="flex flex-col md:flex-row justify-between items-center mb-6 border-b pb-4">
             <div>
-                <h1 class="text-2xl font-bold text-blue-700">🌻 SFL Calculator</h1>
+                <h1 class="text-2xl font-bold text-blue-700">🌻 Pet Feed Calculator <small>v1.0</small></h1>
                 <p class="text-xs text-gray-500 mt-1">
                     Created by <a href="https://sunflower-land.com/play/#/visit/7352930506392777" target="_blank" class="text-blue-600 hover:underline font-bold">Get Zen</a>
                 </p>
@@ -156,6 +156,7 @@
         // --- 1. CONFIGURATION ---
         const fixedCosts = { "Wild Mushroom": 0, "Magic Mushroom": 0, "Fish": 0.1882 };
         const comparisonItems = ["Dewberry", "Chewed Bone", "Ruffroot", "Heart Leaf", "Frost Pebble", "Wild Grass", "Ribbon", "Moonfur"];
+        const environment = 'PROD'; // 'TEST' / 'PROD'
         
         // Master Recipe List
         const recipesList = [
@@ -313,12 +314,15 @@
 
             try {
                 // Using allorigins proxy to bypass CORS on static sites
-                const response = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://sfl.world/api/v1/prices'));
+                const response = environment==='PROD'
+                    ? await fetch('https://sfl.world/api/v1/prices')
+                    : await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://sfl.world/api/v1/prices'))
                 const proxyData = await response.json();
-                const json = JSON.parse(proxyData.contents);
 
                 // Process logic similar to Google Script
-                let priceData = json;
+                let priceData = environment==='PROD'
+                    ? proxyData
+                    : JSON.parse(proxyData.contents)
                 if(priceData.data) priceData = priceData.data;
                 if(priceData.p2p) priceData = priceData.p2p;
 
