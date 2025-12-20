@@ -21,6 +21,15 @@ Trading View for resources (AI generated)
 
 https://sfl.world/tools/trade/
 
+# Pet Feed Calculator
+Created by Get Zen
+#### TODO
+* Requests lists for food 1/2/3 (Easy/Medium/Hard)
+* Load farm data
+* List of pets with their current requests
+
+https://sfl.world/tools/pet-feed-calc/
+
 # Community Wiki
 Community Docs Deprecated
 
