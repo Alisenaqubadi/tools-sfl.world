@@ -21,11 +21,21 @@ let lineSeries = null;
 let candlestickSeries = null;
 let currentUrl = '/api/v1/trade/csv/601.csv';
 let resourceMap = {};                   // url → human-readable name
+let currentResourceName = '';           // currently selected resource name for title
 
 /* --------------------------- DOM references -------------------------- */
 const chartContainer = document.getElementById('chart');
 const errorMessage   = document.getElementById('errorMessage');
 const exportBtn      = document.getElementById('exportPngBtn');
+
+/* --------------------------- Helper: Update page title -------------------------- */
+function updatePageTitle(resourceName) {
+    if (resourceName) {
+        document.title = `${resourceName} - Price History Visualization`;
+    } else {
+        document.title = 'Price History Visualization';
+    }
+}
 
 /* --------------------------- Chart creation -------------------------- */
 const chart = LightweightCharts.createChart(chartContainer, {
@@ -130,6 +140,7 @@ fetch('/api/v1/trade/structure.json')
         const defaultName = urlParams.get('name');
         let selectedUrl   = currentUrl;
         let found         = false;
+        let selectedResourceName = '';
 
         Object.entries(data).forEach(([group, items]) => {
             const optgroup = document.createElement('optgroup');
@@ -144,6 +155,7 @@ fetch('/api/v1/trade/structure.json')
 
                 if (defaultName && name.toLowerCase() === defaultName.toLowerCase()) {
                     selectedUrl = url;
+                    selectedResourceName = name;
                     found = true;
                 }
             });
@@ -155,6 +167,21 @@ fetch('/api/v1/trade/structure.json')
 
         if (!found && defaultName) {
             showError(`Resource "${defaultName}" not found. Defaulting to Wood.`);
+            // Try to get the first resource name as fallback
+            const firstOption = select.querySelector('option');
+            if (firstOption) {
+                selectedResourceName = firstOption.textContent;
+            }
+        } else if (selectedResourceName) {
+            currentResourceName = selectedResourceName;
+            updatePageTitle(currentResourceName);
+        } else {
+            // If no default, get the currently selected option's text
+            const selectedOption = select.options[select.selectedIndex];
+            if (selectedOption) {
+                currentResourceName = selectedOption.textContent;
+                updatePageTitle(currentResourceName);
+            }
         }
 
         loadChartData(currentUrl);
@@ -165,6 +192,9 @@ fetch('/api/v1/trade/structure.json')
 document.getElementById('resourceSelect').addEventListener('change', function () {
     currentUrl = this.value;
     const name = resourceMap[currentUrl] || 'Unknown';
+    currentResourceName = name;
+    updatePageTitle(currentResourceName);
+
     const url  = new URL(window.location);
     url.searchParams.set('name', name);
     window.history.pushState({}, '', url);
