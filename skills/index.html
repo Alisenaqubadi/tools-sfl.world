@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>SFL Skill Trainer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
     <script>
         const savedTheme = localStorage.getItem('theme') || 'light'
         document.documentElement.setAttribute('data-bs-theme', savedTheme)
@@ -217,6 +217,7 @@
         "Mining": "bi-hammer",
         "Cooking": "bi-egg-fried",
         "Compost": "bi-recycle",
+        "Aging": "bi-flask",
         "Fruit Patch": "bi-apple",
         "Animals": "bi-egg",
         "Bees & Flowers": "bi-flower2",
@@ -226,9 +227,9 @@
 
     function loadJSONFiles() {
         return Promise.all([
-            $.getJSON('data/SKILL_POINTS_PER_TIER.json'),
-            $.getJSON('data/BUMPKIN_REVAMP_SKILL_TREE.json'),
-            $.getJSON('data/SKILL_IDS.json')
+            $.getJSON('data/SKILL_POINTS_PER_TIER.json?202605074'),
+            $.getJSON('data/BUMPKIN_REVAMP_SKILL_TREE.json?202605074'),
+            $.getJSON('data/SKILL_IDS.json?202605074')
         ]).then(([pointsData, skillData, idsData]) => {
             skillPointsPerTier = pointsData;
             skillsData = skillData;

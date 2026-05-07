@@ -244,7 +244,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+0.1 fruit yield",
+                "shortDescription": "+0.1 Fruit Patch yield",
                 "labelType": "success"
             }
         },
@@ -260,7 +260,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "-10% fruit seeds cost",
+                "shortDescription": "-10% Fruit Patch seeds cost",
                 "labelType": "success"
             }
         },
@@ -329,7 +329,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "-10% fruit growth time",
+                "shortDescription": "-10% Fruit Patch growth time",
                 "labelType": "info"
             }
         },
@@ -394,7 +394,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "20% chance of +1 fruit yield",
+                "shortDescription": "20% chance of +1 Fruit Patch yield",
                 "labelType": "vibrant"
             }
         }
@@ -410,11 +410,11 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "-50% Apple and Banana growth time",
+                "shortDescription": "-25% Apple and Banana growth time",
                 "labelType": "success"
             },
             "debuff": {
-                "shortDescription": "+100% growth time for all other fruits",
+                "shortDescription": "+10% growth time for all other fruit patch fruits",
                 "labelType": "danger"
             }
         }
@@ -430,11 +430,11 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "-50% Blueberry and Orange growth time",
+                "shortDescription": "-25% Blueberry and Orange growth time",
                 "labelType": "success"
             },
             "debuff": {
-                "shortDescription": "+100% growth time for all other fruits",
+                "shortDescription": "+10% growth time for all other fruit patch fruits",
                 "labelType": "danger"
             }
         }
@@ -454,7 +454,7 @@
                 "labelType": "success"
             },
             "debuff": {
-                "shortDescription": "-0.25 yield for all other fruits",
+                "shortDescription": "-0.25 yield for all other fruit patch fruits",
                 "labelType": "danger"
             }
         }
@@ -549,7 +549,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "-20% axe cost",
+                "shortDescription": "-20% axe coin cost",
                 "labelType": "success"
             }
         },
@@ -615,7 +615,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+5 daily fishing limit",
+                "shortDescription": "+5 daily fishing reels",
                 "labelType": "success"
             }
         },
@@ -679,7 +679,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+10 daily fishing limit",
+                "shortDescription": "+10 daily fishing reels",
                 "labelType": "success"
             }
         },
@@ -744,11 +744,11 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+15 daily fishing limit",
+                "shortDescription": "+25 daily fishing reels",
                 "labelType": "success"
             },
             "debuff": {
-                "shortDescription": "-1 worm from all composters",
+                "shortDescription": "+1 Rod cost per cast",
                 "labelType": "danger"
             }
         },
@@ -765,7 +765,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+20% Fish XP",
+                "shortDescription": "+20% Bumpkin XP from Fish",
                 "labelType": "success"
             }
         }
@@ -877,11 +877,11 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+0.25 Feather yield",
+                "shortDescription": "+0.35 Feather yield",
                 "labelType": "success"
             },
             "debuff": {
-                "shortDescription": "-0.35 Leather & Merino Wool yield",
+                "shortDescription": "-0.1 Leather & Merino Wool yield",
                 "labelType": "danger"
             }
         }
@@ -977,11 +977,11 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+0.25 Merino Wool yield",
+                "shortDescription": "+0.35 Merino Wool yield",
                 "labelType": "success"
             },
             "debuff": {
-                "shortDescription": "-0.35 Leather & Feather yield",
+                "shortDescription": "-0.1 Leather & Feather yield",
                 "labelType": "danger"
             }
         }
@@ -1077,11 +1077,11 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+0.25 Leather yield",
+                "shortDescription": "+0.35 Leather yield",
                 "labelType": "success"
             },
             "debuff": {
-                "shortDescription": "-0.35 Feather & Merino Wool yield",
+                "shortDescription": "-0.1 Feather & Merino Wool yield",
                 "labelType": "danger"
             }
         }
@@ -1414,7 +1414,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "-20% coin cost for all pickaxes",
+                "shortDescription": "-20% all pickaxes coin cost",
                 "labelType": "success"
             }
         },
@@ -1598,7 +1598,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+5% Experience from eating meals",
+                "shortDescription": "+5% Bumpkin XP",
                 "labelType": "success"
             }
         },
@@ -1646,7 +1646,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+10% experience for drinks from the Smoothie Shack",
+                "shortDescription": "+10% Bumpkin XP from drinks",
                 "labelType": "success"
             }
         },
@@ -1678,7 +1678,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+15% experience for meals from the Deli",
+                "shortDescription": "+15% Bumpkin XP from Deli",
                 "labelType": "success"
             }
         },
@@ -1828,7 +1828,7 @@
         },
         "boosts": {
             "buff": {
-                "shortDescription": "+10% Experience on food made with Honey",
+                "shortDescription": "+10% Bumpkin XP from Honey Foods",
                 "labelType": "success"
             }
         },
@@ -1979,7 +1979,7 @@
         "boosts": {
             "buff": {
                 "shortDescription": "-5% Crop Machine growth time",
-                "labelType": "success"
+                "labelType": "info"
             },
             "debuff": {
                 "shortDescription": "+10% Oil consumption in Crop Machine",
@@ -2385,10 +2385,6 @@
             "buff": {
                 "shortDescription": "+2 Worms",
                 "labelType": "success"
-            },
-            "debuff": {
-                "shortDescription": "-5 fertilisers",
-                "labelType": "danger"
             }
         },
         "disabled": false
@@ -2407,10 +2403,176 @@
                 "labelType": "success"
             },
             "debuff": {
-                "shortDescription": "-3 Worms",
+                "shortDescription": "-2 Worms",
                 "labelType": "danger"
             }
         },
         "disabled": false
+    },
+    "Cheap Rakes": {
+        "name": "Cheap Rakes",
+        "tree": "Aging",
+        "disabled": false,
+        "requirements": {
+            "points": 1,
+            "tier": 1,
+            "island": "basic"
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "-20% salt rake coin cost",
+                "labelType": "success"
+            }
+        }
+    },
+    "Speedy Aging": {
+        "name": "Speedy Aging",
+        "tree": "Aging",
+        "disabled": false,
+        "requirements": {
+            "points": 1,
+            "tier": 1,
+            "island": "basic"
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "-10% Fish Aging time",
+                "labelType": "info"
+            }
+        }
+    },
+    "Salty Seas": {
+        "name": "Salty Seas",
+        "tree": "Aging",
+        "disabled": false,
+        "requirements": {
+            "points": 1,
+            "tier": 1,
+            "island": "basic"
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "-10% salt charge replenishment time",
+                "labelType": "info"
+            }
+        }
+    },
+    "Wide Rakes": {
+        "name": "Wide Rakes",
+        "tree": "Aging",
+        "disabled": false,
+        "requirements": {
+            "points": 1,
+            "tier": 1,
+            "island": "basic"
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "+2 Salt per harvest",
+                "labelType": "success"
+            }
+        }
+    },
+    "Bacalhau": {
+        "name": "Bacalhau",
+        "tree": "Aging",
+        "disabled": false,
+        "requirements": {
+            "points": 1,
+            "tier": 1,
+            "island": "basic"
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "+1 Bait yield from fermentation rack",
+                "labelType": "success"
+            }
+        }
+    },
+    "Fish Smoking": {
+        "name": "Fish Smoking",
+        "tree": "Aging",
+        "disabled": false,
+        "requirements": {
+            "points": 2,
+            "tier": 2,
+            "island": "basic"
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "Doubled chance Aged Fish becomes Prime Aged",
+                "labelType": "vibrant"
+            }
+        }
+    },
+    "Refiner": {
+        "name": "Refiner",
+        "tree": "Aging",
+        "disabled": false,
+        "requirements": {
+            "points": 2,
+            "tier": 2,
+            "island": "basic"
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "15% chance of +1 Refined Salt when making Refined Salt",
+                "labelType": "vibrant"
+            }
+        }
+    },
+    "Sea Blessed": {
+        "name": "Sea Blessed",
+        "tree": "Aging",
+        "disabled": false,
+        "requirements": {
+            "points": 2,
+            "tier": 2,
+            "island": "basic"
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "5% chance to restore 1 charge to 4 Salt Nodes on harvest",
+                "labelType": "vibrant"
+            }
+        }
+    },
+    "Ager": {
+        "name": "Ager",
+        "tree": "Aging",
+        "disabled": false,
+        "requirements": {
+            "points": 3,
+            "tier": 3,
+            "island": "basic"
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "2× output from Aging Shed Racks",
+                "labelType": "success"
+            },
+            "debuff": {
+                "shortDescription": "2× Aging Shed inputs (ingredients, fish & salt)",
+                "labelType": "danger"
+            }
+        }
+    },
+    "Salt Surge": {
+        "name": "Salt Surge",
+        "tree": "Aging",
+        "disabled": false,
+        "power": true,
+        "requirements": {
+            "points": 3,
+            "tier": 3,
+            "island": "basic",
+            "cooldown": 259200000
+        },
+        "boosts": {
+            "buff": {
+                "shortDescription": "Recharge all Salt Nodes to max",
+                "labelType": "vibrant"
+            }
+        }
     }
 }
