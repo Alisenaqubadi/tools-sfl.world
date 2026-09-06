@@ -1,8 +1,0 @@
-:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #e7edf7; background: #0b1020; }
-body { margin: 0; min-width: 320px; background: #0b1020; }
-* { box-sizing: border-box; }
-.positive { color: #35d39e; } .negative { color: #f87171; }
-.muted { color: #94a3b8; }
-.nav-link { display: flex; align-items: center; gap: 12px; width: 100%; padding: 11px 12px; color: #94a3b8; border-radius: 8px; margin-bottom: 4px; font-size: 14px; font-weight: 600; }
-.nav-link:hover { background: #1e293b; color: #fff; }.nav-link.active { background: rgba(139, 92, 246, .18); color: #c4b5fd; }
-.metric-card { background: linear-gradient(145deg, rgba(30,41,59,.8), rgba(15,23,42,.9)); }
