@@ -1,4 +1,4 @@
-# VANTA Trade
+# Trade
 
 A fresh React 19 / Vite trading dashboard foundation built with Mantine, React Router, Zustand, React Query, Axios, React Hook Form, Zod, Big.js, and Lightweight Charts.
 
