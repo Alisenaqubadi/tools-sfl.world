@@ -198,5 +198,9 @@
   {
     "name": "Olive",
     "path": "https://sfl.world/img/source/Olive.png"
+  },
+  {
+    "name": "Honey",
+    "path": "https://sfl.world/img/delivery/Beehive.png"
   }
 ]
