@@ -11,7 +11,9 @@ export async function getList() {
 }
 
 export async function getData(id) {
-  const response = await fetch(`${API_URL}/csv/${id}.csv`);
+  const response = await fetch(`${API_URL}/csv/${id}.csv`, {
+    cache: "no-store",
+  });
 
   if (!response.ok) {
     throw new Error("Could not load trade data");

@@ -8,19 +8,17 @@ export default function Footer() {
         <Group gap={6}>
           <IconBuildingCottage size={16} color="var(--mantine-color-teal-5)" />
           <Text size="sm" c="dimmed">
-            Made by &quot; 
+            Made by &quot;
             <Tooltip label="Care to help?">
-            <Anchor
-            href="https://sunflower-land.com/play/#/visit/647773264037829"
-            target="_blank"
-            rel="noopener noreferrer"
-            
-            >
+              <Anchor
+                href="https://sunflower-land.com/play/#/visit/647773264037829"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 nameless00
-                
-                </Anchor>
-                </Tooltip>
-                &quot;
+              </Anchor>
+            </Tooltip>
+            &quot;
           </Text>
         </Group>
 
