@@ -18,7 +18,8 @@ export function getLogicalRangeFromTime(data, fromUnix, toUnix) {
 }
 
 function lowerBound(data, target, getTime) {
-  let lo = 0, hi = data.length;
+  let lo = 0,
+    hi = data.length;
   while (lo < hi) {
     const mid = (lo + hi) >>> 1;
     if (getTime(data[mid]) < target) lo = mid + 1;
@@ -28,7 +29,8 @@ function lowerBound(data, target, getTime) {
 }
 
 function upperBound(data, target, getTime) {
-  let lo = 0, hi = data.length;
+  let lo = 0,
+    hi = data.length;
   while (lo < hi) {
     const mid = (lo + hi) >>> 1;
     if (getTime(data[mid]) <= target) lo = mid + 1;

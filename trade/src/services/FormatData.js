@@ -14,10 +14,10 @@ export function FormatMainData(data) {
 }
 
 export function toCandles(data) {
-   const daily = {}
+  const daily = {};
 
   for (const { time, value } of data) {
-    const day = Math.floor((time * 1000) / 86400000)
+    const day = Math.floor((time * 1000) / 86400000);
 
     if (!daily[day]) {
       daily[day] = {
@@ -26,13 +26,23 @@ export function toCandles(data) {
         high: value,
         low: value,
         close: value,
-      }
+      };
     } else {
-      daily[day].high = Math.max(daily[day].high, value)
-      daily[day].low = Math.min(daily[day].low, value)
-      daily[day].close = value
+      daily[day].high = Math.max(daily[day].high, value);
+      daily[day].low = Math.min(daily[day].low, value);
+      daily[day].close = value;
     }
   }
 
-  return Object.values(daily)
+  return Object.values(daily);
+}
+
+export function formatResourceOptions(data) {
+  return Object.entries(data).map(([group, items]) => ({
+    group,
+    items: Object.entries(items).map(([label, { id }]) => ({
+      value: String(id),
+      label,
+    })),
+  }));
 }

@@ -12,7 +12,7 @@ import {
   getSeriesOptions,
   getResponsiveOptions,
 } from "../../../styles/chart.style.js";
-import { getVisibleLogicalRange } from "../../../services/FormatDate.js";
+import { getVisibleLogicalRange } from "../../../services/FormatTime.js";
 
 function isValidRange(range) {
   return (
@@ -41,10 +41,10 @@ export default function PriceChart({ resource, chartPeriod, chartType }) {
     const initialPrecision = getPrecision(initialWidth);
     lastPrecisionRef.current = initialPrecision;
     let range;
-    if(chartType === "l") {
-       range = getVisibleLogicalRange(chartPeriod, data);
+    if (chartType === "l") {
+      range = getVisibleLogicalRange(chartPeriod, data);
     } else {
-       range = getVisibleLogicalRange("Max", toCandles(data));
+      range = getVisibleLogicalRange("Max", toCandles(data));
     }
 
     const chart = createChart(container, {
@@ -55,21 +55,19 @@ export default function PriceChart({ resource, chartPeriod, chartType }) {
 
     let series;
 
-    if(chartType === "l") {
+    if (chartType === "l") {
       series = chart.addSeries(LineSeries, getSeriesOptions(initialPrecision));
       series.setData(data);
     } else {
       series = chart.addSeries(CandlestickSeries, {
-         upColor: "#26a69a",
-  downColor: "#ef5350",
-  borderVisible: false,
-  wickUpColor: "#26a69a",
-  wickDownColor: "#ef5350",
-      })
-      series.setData(toCandles(data))
+        upColor: "#26a69a",
+        downColor: "#ef5350",
+        borderVisible: false,
+        wickUpColor: "#26a69a",
+        wickDownColor: "#ef5350",
+      });
+      series.setData(toCandles(data));
     }
-    
-    
 
     if (isValidRange(range)) {
       chart.timeScale().setVisibleLogicalRange(range);
@@ -118,8 +116,17 @@ export default function PriceChart({ resource, chartPeriod, chartType }) {
   if (isLoading) return <LoadingPage />;
 
   return (
-    <Paper p="xs" radius="md" withBorder style={{ overflow: "hidden", width: "100%" }}>
-      <div id="chart-container" ref={chartContainerRef} style={{ width: "100%" }} />
+    <Paper
+      p="xs"
+      radius="md"
+      withBorder
+      style={{ overflow: "hidden", width: "100%" }}
+    >
+      <div
+        id="chart-container"
+        ref={chartContainerRef}
+        style={{ width: "100%" }}
+      />
     </Paper>
   );
 }
