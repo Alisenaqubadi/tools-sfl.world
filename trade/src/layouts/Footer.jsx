@@ -1,10 +1,19 @@
 import { Anchor, AppShell, Group, Text, Tooltip } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { IconBuildingCottage, IconBrandGithub } from "@tabler/icons-react";
 
 export default function Footer() {
+  const isSmallScreen = useMediaQuery("(max-width: 400px)");
+
   return (
     <AppShell.Footer>
-      <Group h="100%" px="lg" justify="space-between" wrap="wrap" gap="xs">
+      <Group
+        h="100%"
+        px={{ base: "sm", sm: "lg" }}
+        justify="space-between"
+        wrap="wrap"
+        gap="xs"
+      >
         <Group gap={6}>
           <IconBuildingCottage size={16} color="var(--mantine-color-teal-5)" />
           <Text size="sm" c="dimmed">
@@ -22,7 +31,7 @@ export default function Footer() {
           </Text>
         </Group>
 
-        <Group gap="md">
+        <Group gap="md" wrap="wrap" justify="center">
           <Text size="sm" c="dimmed">
             © {new Date().getFullYear()} SFL.WORLD
           </Text>
@@ -36,7 +45,7 @@ export default function Footer() {
           >
             <Group gap={5} wrap="nowrap">
               <IconBrandGithub size={16} />
-              <span>GitHub</span>
+              {!isSmallScreen && <span>GitHub</span>}
             </Group>
           </Anchor>
         </Group>

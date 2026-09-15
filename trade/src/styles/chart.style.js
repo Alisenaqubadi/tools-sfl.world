@@ -11,14 +11,37 @@ export const PRECISION_STEPS = [
 // to pick a starting density that's neither too sparse nor too dense.
 export const DEFAULT_PX_PER_BAR = 6;
 
-export function getPrecision(width) {
-  return PRECISION_STEPS.find((step) => width <= step.maxWidth);
+export const LINE_SERIES_COLORS = [
+  "#4dabf7",
+  "#f59f00",
+  "#51cf66",
+  "#cc5de8",
+  "#ff6b6b",
+];
+
+export const SMA_COLOR = "#ffd43b";
+
+export function getPrecision(width, referenceValue = 1) {
+  const responsivePrecision = PRECISION_STEPS.find(
+    (step) => width <= step.maxWidth,
+  );
+  const value = Math.abs(referenceValue);
+  const valueDecimals =
+    value > 0
+      ? Math.min(8, Math.max(0, Math.ceil(-Math.log10(value)) + 2))
+      : responsivePrecision.decimals;
+  const decimals = Math.max(responsivePrecision.decimals, valueDecimals);
+
+  return {
+    decimals,
+    minMove: 10 ** -decimals,
+  };
 }
 
 export function getChartHeight(width) {
-  if (width < 420) return 300;
-  if (width < 700) return 380;
-  if (width < 900) return 440;
+  if (width < 420) return 340;
+  if (width < 700) return 410;
+  if (width < 920) return 440;
   return 480;
 }
 
@@ -30,25 +53,39 @@ export function getMinBarSpacing(width, range) {
   return Math.min(2, Math.max(0.1, plotWidth / visibleBars));
 }
 
-export function getChartOptions(width, minBarSpacing = 2) {
+export function getChartOptions(
+  width,
+  minBarSpacing = 2,
+  colorScheme = "dark",
+) {
+  const isLight = colorScheme === "light";
+
   return {
     layout: {
-      background: { color: "#1a1b1e" },
-      textColor: "#a6a7ab",
+      background: { color: isLight ? "#ffffff" : "#1a1b1e" },
+      textColor: isLight ? "#495057" : "#a6a7ab",
       fontFamily: "Inter, system-ui, sans-serif",
       fontSize: width < 480 ? 10 : 12,
     },
     grid: {
-      vertLines: { color: "rgba(255, 255, 255, 0.05)" },
-      horzLines: { color: "rgba(255, 255, 255, 0.05)" },
+      vertLines: {
+        color: isLight ? "rgba(0, 0, 0, 0.08)" : "rgba(255, 255, 255, 0.05)",
+      },
+      horzLines: {
+        color: isLight ? "rgba(0, 0, 0, 0.08)" : "rgba(255, 255, 255, 0.05)",
+      },
     },
     rightPriceScale: {
-      borderColor: "rgba(255, 255, 255, 0.12)",
+      borderColor: isLight
+        ? "rgba(0, 0, 0, 0.12)"
+        : "rgba(255, 255, 255, 0.12)",
       scaleMargins: { top: 0.16, bottom: 0.16 },
       minimumWidth: width < 480 ? 44 : 60,
     },
     timeScale: {
-      borderColor: "rgba(255, 255, 255, 0.12)",
+      borderColor: isLight
+        ? "rgba(0, 0, 0, 0.12)"
+        : "rgba(255, 255, 255, 0.12)",
       minBarSpacing,
       rightOffset: 2,
       timeVisible: true,
@@ -72,12 +109,16 @@ export function getChartOptions(width, minBarSpacing = 2) {
   };
 }
 
-export function getSeriesOptions(precision) {
+export function getSeriesOptions(
+  precision,
+  color = LINE_SERIES_COLORS[0],
+  colorScheme = "dark",
+) {
   return {
-    color: "#4dabf7",
+    color,
     lineWidth: 2,
-    crosshairMarkerBackgroundColor: "#4dabf7",
-    crosshairMarkerBorderColor: "#1a1b1e",
+    crosshairMarkerBackgroundColor: color,
+    crosshairMarkerBorderColor: colorScheme === "light" ? "#ffffff" : "#1a1b1e",
     priceFormat: {
       type: "price",
       precision: precision.decimals,
