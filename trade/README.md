@@ -20,6 +20,7 @@ npm run dev
 
 
 
+
 ```
 trade
 ├─ eslint.config.js
@@ -42,20 +43,29 @@ trade
 │  │  └─ image_paths.json
 │  ├─ components
 │  │  ├─ common
+│  │  │  ├─ ResourceSelect.jsx
+│  │  │  └─ charts
+│  │  │     ├─ ChartLegend.jsx
+│  │  │     ├─ PriceChart.css
+│  │  │     └─ PriceChart.jsx
 │  │  ├─ layout
-│  │  ├─ navigation
 │  │  └─ ui
 │  ├─ hooks
 │  │  └─ useResources.query.js
 │  ├─ layouts
 │  │  ├─ Body.jsx
+│  │  ├─ Footer.css
 │  │  ├─ Footer.jsx
 │  │  └─ Headers.jsx
 │  ├─ main.jsx
 │  ├─ services
-│  │  └─ FormatData.js
+│  │  ├─ FormatData.js
+│  │  ├─ FormatTime.js
+│  │  ├─ Season.js
+│  │  └─ search.js
 │  ├─ store
 │  ├─ styles
+│  │  └─ chart.style.js
 │  └─ utils
 └─ vite.config.js
 
