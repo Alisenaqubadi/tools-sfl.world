@@ -1,1 +1,0 @@
-Please select a section from the menu to begin
